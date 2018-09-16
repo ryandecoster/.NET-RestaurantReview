@@ -1,0 +1,36 @@
+.indent{
+    text-indent: 40px;
+}
+.name{
+    margin-right: 10px;
+    color: black;
+}
+.star{
+    color: black;
+    font-weight: bold;
+}
+.label{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+.review{
+    border-bottom: 2px solid black;
+    margin-top: 10px;
+}
+td{
+    padding: 0px 10px;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+span {
+    color: red;
+}
+.navbar-nav .nav-link{
+    padding-right: 40px;
+}
+.navbar-nav{
+    flex-direction: row;
+}

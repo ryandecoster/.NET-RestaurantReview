@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+    <title>Restaurant Review</title>
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <span class="navbar-brand">Restaurant Review</span>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class='nav-link' href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link active' href="/reviews">Reviews</a>
+            </li>
+        </ul>
+    </nav><br>
+    @foreach(var i in ViewBag.reviews) {
+        <div class="review">
+            <span class="label">Review for: </span> &nbsp; <span class="name"><i>@i.Restaurant</i></span>
+            @if (i.Star == 1) {
+                <span class="star">@i.Star star</span>
+            }
+            else {
+                <span class="star">@i.Star stars</span>
+            }
+            <br>
+            <span class="label">Reviewer: </span> &nbsp; @i.Name • 
+            @Convert.ToDateTime(i.Date).ToString("MMMM dd, yyyy")
+            <p class="indent">@i.Description</p>
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+    <title>Restaurant Review</title>
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <span class="navbar-brand">Restaurant Review</span>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class='nav-link active' href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href="/reviews">Reviews</a>
+            </li>
+        </ul>
+    </nav><br>
+    <h1>Write A New Review:</h1>
+    <table>
+            <form class="form" asp-action="create" asp-controller="Home" method="post">
+                <tr>
+                    <td><label asp-for="Name">Reviewer Name:</label></td>
+                    <td><input asp-for="Name" type="text" name="Name"></td>
+                    <td><span asp-validation-for="Name"></span></td>
+
+                    <td><label asp-for="Star">Star:</label></td>
+                    <td><select name="Star">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    </select></td>
+                    <td><span asp-validation-for="Star"></span></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Restaurant">Restaurant:</label></td>
+                    <td><input asp-for="Restaurant" type="text" name="Restaurant"></td>
+                    <td><span asp-validation-for="Restaurant"></span></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Description">Review:</label></td>
+                    <td><textarea name="Description" cols="50" rows="5"></textarea></td>
+                    <td><span asp-validation-for="Description"></span></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Date">Date of Visit:</label></td>
+                    <td><input asp-for="Date" type="date" name="Date"></td>
+                    <td><span asp-validation-for="Date"></span></td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-success">Submit</button></td>
+                </tr>
+            </form>
+        </table>
+</body>
+</html>
